@@ -1,0 +1,45 @@
+{% set css %}
+  {% include "../main.css" %}
+{% endset %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset=utf-8>
+        <meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="Personal Website of Patrick Elshen">
+        <meta name=author content="Patrick Elshen">
+        <meta name=keywords content="Patrick, Boksan, Cullen, Bokšan, Elshen, Java, JavaScript, HTML, CSS, AngularJS, Angular2,
+            Angular2+, Angular, TypeScript, Ionic, Spring, Apache, Tomcat, Christian, faith, Jesus, technology, Typescript,
+            programming, software, developer, engineer, University of Bath, computer science, Kingdom Code, London">
+        <meta property=og:title content="Patrick Elshen"><meta property=og:description content="Personal Website of Patrick Elshen">
+        <meta property=og:type content="website">
+        <meta property=og:locale content="en_GB">
+        <meta property=og:image content="/static/patrick-mobile.jpg">
+        <meta property=og:url content="https://elshens.uk">
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+        <link rel="manifest" href="/site.webmanifest">
+        <link href="https://fonts.googleapis.com/css?family=Nunito:regular,bold" rel="stylesheet">
+        <title>{{ title }}</title>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-111704537-1"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() {
+                dataLayer.push(arguments);
+            }
+            gtag('js', new Date());
+
+            gtag('config', 'UA-111704537-1');
+        </script>
+        <link rel="stylesheet" href="{{ "/assets/fa/css/brands.min.css" | url }}"></link>
+        <link rel="stylesheet" href="{{ "/assets/fa/css/fontawesome.min.css" | url }}"></link>
+        <style>
+            {{ css | cssmin | safe }}
+        </style>
+    </head>
+    <body>
+        <div class="main">
+            {{ content | safe }}
+        </div>
+    </body>
+</html>
